@@ -1,0 +1,19 @@
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '9.7.2'
+  displayName: 'Installing Node.js'
+- script: yarn install
+  displayName: 'Installing dependencies'
+- script: |
+    echo "y" | android-sdk\emulator\emulator.exe -avd Detox_Android -no-window -no-audio
+  displayName: 'Start Android Emulator'
+- script: |
+    yarn android:build 
+  displayName: 'Build and bundle app'
+- script: |
+    yarn detox:build:android-debug --configuration android 
+  displayName: 'Detox Build'
+- script: |
+    yarn detox:e2e:android-debug --configuration android 
+  displayName: 'Detox Test'
