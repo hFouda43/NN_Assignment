@@ -1,11 +1,11 @@
 # NN_Assignment
 
-React native app is cloned from the following repo:https://github.com/pinnacleQAAcademy/pqaa_detox
-Platform used: Windows
+* React native app is cloned from the following repo:https://github.com/pinnacleQAAcademy/pqaa_detox
+* Platform used: Windows
 
 ### Prerequisites:
 ***
-NodeJs
+* NodeJs
 * Java
 * Android studio
 
