@@ -1,12 +1,12 @@
 import React from 'react';
-import { SafeAreaView, ScrollView } from 'react-native';
+import { SafeAreaView, ScrollView, Text } from 'react-native';
 import ImageComponents from '../components/ImageComponents';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 const ImagesScreen = () => {
   return (
     <SafeAreaView style={{marginBottom: 50}}>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView showsVerticalScrollIndicator={false} testID={citiesBackground}>
         <ImageComponents title="Europe" />
         <ImageComponents title="USA / Canada" />
         <ImageComponents title="Asia" />
@@ -16,7 +16,7 @@ const ImagesScreen = () => {
 };
 
 ImagesScreen.navigationOptions = {
-  headerTitle: 'Cities',
+  headerTitle: ()=> <text testID="citiesHeader">Cities</text> ,
   headerShown: true,
   headerTitleAlign: 'center',
   title: 'Cities',
